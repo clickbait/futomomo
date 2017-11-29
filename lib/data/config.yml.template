@@ -1,0 +1,21 @@
+client_id: 
+token: 
+prefix: $
+owner:
+game: 
+perms: 1609825463
+error_embed_color: 0xbb2735
+
+# configuration for the Utilities module
+utilities:
+  :enabled: true
+  :embed_color: 0x007540
+
+# configuration for the Help module
+help:
+  :enabled: true
+  :embed_color: 0xffff66
+
+# configuration for the Search module
+search:
+  :enabled: true

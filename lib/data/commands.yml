@@ -1,0 +1,23 @@
+Help:
+  commands:
+    aliases: [cmds]
+    description: Returns a list of commands in the given module
+    usage: commands <module>
+  modules:
+    aliases: [mdls]
+    description: Returns a list of all the bot's modules
+    usage: modules
+Utilities:
+  hasrole:
+    aliases: []
+    description: Returns a lit of users with the given role
+    usage: hasrole <role>
+  iam:
+    aliases: []
+    description: Assigns the given role if it is an assignable role.
+    usage: iam <role>
+  iamnot:
+    aliases: []
+    description: Removes the given role if it is an assignable role.
+    usage: iamnot <role>
+
