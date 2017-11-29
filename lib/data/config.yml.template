@@ -19,3 +19,6 @@ help:
 # configuration for the Search module
 search:
   :enabled: true
+
+# collection of assignable roles
+assignable_roles:
