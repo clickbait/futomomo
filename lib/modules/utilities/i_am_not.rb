@@ -12,7 +12,7 @@ module Bot
               usage: "#{BOT.prefix}iamnot <role>") do |event, *role_args|
         role = nil
         event.user.roles.each do |serv_role|
-          role = serv_role if serv_role.name == role_args.join(' ')
+          role = serv_role if serv_role.name.downcase == role_args.join(' ').downcase
         end
 
         if role.nil?
