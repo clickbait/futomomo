@@ -34,7 +34,6 @@ module Bot
   # capture a keyboard interrupt and gracefully exit
   Signal.trap('INT') do
     Discordrb::LOGGER.info 'Exiting...'
-    Discordrb::LOGGER.info 'Have a nice day!'
     exit
   end
 
