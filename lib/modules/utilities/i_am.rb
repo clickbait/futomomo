@@ -18,7 +18,12 @@ module Bot
         if role.nil?
           event.channel.send_embed do |embed|
             embed.color = CONFIG.error_embed_color
-            embed.description = 'ERROR: That role does not exist'
+            embed.title = 'ERROR: That role does not exist'
+            embed.description = "**Assignable roles:**\n"
+
+            CONFIG.assignable_roles.each do |role|
+              embed.description << "• #{role}\n"
+            end
           end
         else
           if CONFIG.assignable_roles.include? role.name

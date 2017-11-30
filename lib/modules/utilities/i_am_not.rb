@@ -18,7 +18,12 @@ module Bot
         if role.nil?
           event.channel.send_embed do |embed|
             embed.color = CONFIG.error_embed_color
-            embed.description = 'ERROR: That role is not assigned to you'
+            embed.title = 'ERROR: That role is not assigned to you'
+            embed.description = "**Your removeable roles:**\n"
+
+            event.user.roles.each do |role|
+              embed.description << "• #{role.name}\n" if CONFIG.assignable_roles.include? role.name
+            end
           end
         else
           if CONFIG.assignable_roles.include? role.name
@@ -30,7 +35,12 @@ module Bot
           else
             event.channel.send_embed do |embed|
               embed.color = CONFIG.error_embed_color
-              embed.description = 'ERROR: That role is not removeable'
+              embed.title = 'ERROR: That role is not removeable'
+              embed.description = "**Your removeable roles:**\n"
+
+              event.user.roles.each do |role|
+                embed.description << "• #{role.name}\n" if CONFIG.assignable_roles.include? role.name
+              end
             end
           end
         end
