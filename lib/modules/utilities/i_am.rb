@@ -8,7 +8,7 @@ module Bot
 
 
       command(:iam,
-              description: 'Assigns the current user a role if it is assignable',
+              description: 'Assign a role if it is assignable',
               usage: "#{BOT.prefix}iam <role>") do |event, *role_args|
         role = nil
         event.server.roles.each do |serv_role|

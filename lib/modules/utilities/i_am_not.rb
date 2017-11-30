@@ -8,7 +8,7 @@ module Bot
 
 
       command(:iamnot,
-              description: 'Removes the role from the current user if it is assignable',
+              description: 'Remove a role if it is removeable',
               usage: "#{BOT.prefix}iamnot <role>") do |event, *role_args|
         role = nil
         event.user.roles.each do |serv_role|
