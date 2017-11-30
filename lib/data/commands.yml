@@ -1,12 +1,3 @@
-Help:
-  commands:
-    aliases: [cmds]
-    description: Returns a list of commands in the given module
-    usage: commands <module>
-  modules:
-    aliases: [mdls]
-    description: Returns a list of all the bot's modules
-    usage: modules
 Utilities:
   hasrole:
     aliases: []

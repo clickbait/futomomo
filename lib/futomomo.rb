@@ -30,7 +30,6 @@ module Bot
 
   load_module :DiscordEvents, 'events'
   load_module(:Utilities, 'utilities') if CONFIG.utilities[:enabled]
-  load_module(:Help, 'help') if CONFIG.help[:enabled]
 
   # capture a keyboard interrupt and gracefully exit
   Signal.trap('INT') do
