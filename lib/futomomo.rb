@@ -6,6 +6,7 @@ require 'yaml'
 
 # Main Bot module.
 module Bot
+  Dir['lib/models/*.rb'].each { |mod| load mod }
   Dir['lib/modules/*.rb'].each { |mod| load mod }
   CONFIG = OpenStruct.new YAML.load_file 'lib/data/config.yml'
   BOT = Discordrb::Commands::CommandBot.new(client_id: CONFIG.client_id,
