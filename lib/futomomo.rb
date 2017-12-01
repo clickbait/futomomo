@@ -3,6 +3,7 @@
 require 'discordrb'
 require 'ostruct'
 require 'yaml'
+require 'concurrent'
 
 # Main Bot module.
 module Bot
@@ -30,6 +31,7 @@ module Bot
   end
 
   load_module :DiscordEvents, 'events'
+  load_module :Pugs, 'pugs'
   load_module(:Utilities, 'utilities') if CONFIG.utilities[:enabled]
   load_module(:Help, 'help') if CONFIG.help[:enabled]
 
