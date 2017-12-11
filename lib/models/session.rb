@@ -2,15 +2,17 @@
 
 module Bot
   class Session
-    attr_accessor :players, :ready
+    attr_accessor :players, :ranks, :ready
 
     def initialize
       @players = []
       @ready = false
     end
 
-    def add_player(player)
-      @players.push(player) unless @players.include? player
+    def add_player(player, rank, bnet)
+      unless @players.any? {|h| h[:player] == player}
+        @players.push({:player => player, :rank => rank, :bnet => bnet})
+      end
     end
   end
 end

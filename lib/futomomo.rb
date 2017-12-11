@@ -4,6 +4,7 @@ require 'discordrb'
 require 'ostruct'
 require 'yaml'
 require 'concurrent'
+require 'open-uri'
 
 # Main Bot module.
 module Bot
