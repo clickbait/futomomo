@@ -3,9 +3,12 @@
 require 'discordrb'
 require 'ostruct'
 require 'yaml'
+require 'concurrent'
+require 'open-uri'
 
 # Main Bot module.
 module Bot
+  Dir['lib/models/*.rb'].each { |mod| load mod }
   Dir['lib/modules/*.rb'].each { |mod| load mod }
   CONFIG = OpenStruct.new YAML.load_file 'lib/data/config.yml'
   BOT = Discordrb::Commands::CommandBot.new(client_id: CONFIG.client_id,
@@ -29,6 +32,7 @@ module Bot
   end
 
   load_module :DiscordEvents, 'events'
+  load_module :Pugs, 'pugs'
   load_module(:Utilities, 'utilities') if CONFIG.utilities[:enabled]
 
   # capture a keyboard interrupt and gracefully exit
